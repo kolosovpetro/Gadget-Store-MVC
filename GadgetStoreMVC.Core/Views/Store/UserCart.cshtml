@@ -46,6 +46,12 @@
             <td>
                 @Html.DisplayFor(modelItem => item.PhoneNumber)
             </td>
+            <td>
+                <a asp-controller="Store" asp-action="EditCartItem" asp-route-orderId="@item.OrderId">Edit order</a>
+            </td>
+            <td>
+                <a asp-controller="Store" asp-action="DeleteCartItem" asp-route-orderId="@item.OrderId">Cancel order</a>
+            </td>
         </tr>
 }
     </tbody>

@@ -1,3 +1,4 @@
+using AutoMapper;
 using GadgetStoreMVC.Data.Extensions;
 using GadgetStoreMVC.Extensions;
 using GadgetStoreMVC.Repository.Extensions;
@@ -18,7 +19,7 @@ namespace GadgetStoreMVC
         }
 
         private IConfiguration Configuration { get; }
-        
+
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
@@ -27,8 +28,9 @@ namespace GadgetStoreMVC
             services.AddRepositories(Configuration);
             services.AddServices(Configuration);
             services.ConfigureSession(Configuration);
+            services.AddAutoMapper(typeof(Startup));
         }
-        
+
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())

@@ -18,6 +18,8 @@
   
 ## To Do
 - Inject automapper properly
+- Make repository implemented by tasks
+- Fix order view model
   
 ## Notes
 - Packges in order to code first: EF Core, Tools, Design, EF Postgres

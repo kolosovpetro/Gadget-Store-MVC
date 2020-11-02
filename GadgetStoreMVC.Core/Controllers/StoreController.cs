@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Security.Claims;
+using AutoMapper;
 using GadgetStoreMVC.Models.Models;
 using GadgetStoreMVC.Models.ViewModel;
 using GadgetStoreMVC.Services.Services;
@@ -13,18 +14,20 @@ namespace GadgetStoreMVC.Controllers
     {
         private readonly GadgetServices _gadgetServices;
         private readonly OrderServices _orderServices;
+        private readonly IMapper _mapper;
 
-        public StoreController(GadgetServices gadgetServices, OrderServices orderServices)
+        public StoreController(GadgetServices gadgetServices, OrderServices orderServices, IMapper mapper)
         {
             _gadgetServices = gadgetServices;
             _orderServices = orderServices;
+            _mapper = mapper;
         }
 
         [HttpGet]
         public IActionResult GadgetList()
         {
             var gadgets = _gadgetServices.GetAll();
-            var model = _gadgetServices.MapperInit().Map<IEnumerable<GadgetViewModel>>(gadgets);
+            var model = _mapper.Map<IEnumerable<GadgetViewModel>>(gadgets);
             return View(model);
         }
 
@@ -33,7 +36,7 @@ namespace GadgetStoreMVC.Controllers
         {
             var gadget = _gadgetServices.GetGadget(gadgetId);
             HttpContext.Session.SetInt32("GadgetId", gadgetId);
-            var model = _gadgetServices.MapperInit().Map<GadgetViewModel>(gadget);
+            var model = _mapper.Map<GadgetViewModel>(gadget);
             return View(model);
         }
 
@@ -69,7 +72,7 @@ namespace GadgetStoreMVC.Controllers
         public IActionResult Details(int gadgetId)
         {
             var gadget = _gadgetServices.GetGadget(gadgetId);
-            var model = _gadgetServices.MapperInit().Map<GadgetViewModel>(gadget);
+            var model = _mapper.Map<GadgetViewModel>(gadget);
             return View(model);
         }
 
@@ -78,7 +81,7 @@ namespace GadgetStoreMVC.Controllers
         {
             var order = _orderServices.GetById(orderId);
             HttpContext.Session.SetInt32("orderId", orderId);
-            var model = _orderServices.MapperInit().Map<OrderViewModel>(order);
+            var model = _mapper.Map<OrderViewModel>(order);
             return View(model);
         }
 
@@ -102,7 +105,7 @@ namespace GadgetStoreMVC.Controllers
         {
             var order = _orderServices.GetById(orderId);
             HttpContext.Session.SetInt32("DeleteOrderId", orderId);
-            var model = _orderServices.MapperInit().Map<OrderViewModel>(order);
+            var model = _mapper.Map<OrderViewModel>(order);
             return View(model);
         }
 

@@ -31,14 +31,14 @@ namespace GadgetStoreMVC.Services.Services
             _gadgetRepository.Save();
         }
 
-        public Mapper MapperInit()
-        {
-            var config = new MapperConfiguration(cfg => cfg
-                .CreateMap<GadgetModel, GadgetViewModel>());
-            // create automapper instance
-            var mapper = new Mapper(config);
-            return mapper;
-        }
+        // public Mapper MapperInit()
+        // {
+        //     var config = new MapperConfiguration(cfg => cfg
+        //         .CreateMap<GadgetModel, GadgetViewModel>());
+        //     // create automapper instance
+        //     var mapper = new Mapper(config);
+        //     return mapper;
+        // }
 
 
     }
