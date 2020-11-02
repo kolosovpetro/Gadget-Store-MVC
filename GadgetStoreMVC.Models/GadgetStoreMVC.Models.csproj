@@ -6,6 +6,12 @@
 
     <ItemGroup>
       <Folder Include="Models" />
+      <Folder Include="ViewModel" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.2.0" />
+      <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="5.0.0-rc.2.20475.17" />
     </ItemGroup>
 
 </Project>
