@@ -20,7 +20,7 @@ namespace GadgetStoreMVC.Extensions
                     opts.Password.RequireDigit = true;
                     opts.User.RequireUniqueEmail = true;
                 })
-                .AddEntityFrameworkStores<IdentityContext>();
+                .AddEntityFrameworkStores<PostgresContext>();
             return services;
         }
     }
