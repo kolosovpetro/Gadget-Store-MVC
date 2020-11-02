@@ -4,4 +4,14 @@
         <TargetFramework>netcoreapp3.1</TargetFramework>
     </PropertyGroup>
 
+    <ItemGroup>
+      <Folder Include="BaseRepository" />
+      <Folder Include="ConcreteRepositories" />
+      <Folder Include="Interfaces" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\GadgetStoreMVC.Data\GadgetStoreMVC.Data.csproj" />
+    </ItemGroup>
+
 </Project>
