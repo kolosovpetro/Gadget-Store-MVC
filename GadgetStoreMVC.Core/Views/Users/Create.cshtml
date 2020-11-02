@@ -1,6 +1,6 @@
 ﻿@model GadgetStoreMVC.Models.ViewModel.CreateUserViewModel
 @{
-    ViewBag.Title = "Добавление пользователя";
+    ViewBag.Title = "Add User";
 }
 <form asp-action="Create" asp-controller="Users">
     <div asp-validation-summary="All" class="text-danger"></div>
@@ -9,14 +9,14 @@
         <input type="text" asp-for="Email" class="form-control" />
     </div>
     <div class="form-group">
-        <label asp-for="Password" class="control-label">Пароль</label>
+        <label asp-for="Password" class="control-label">Password</label>
         <input type="password" asp-for="Password" class="form-control" />
     </div>
     <div class="form-group">
-        <label asp-for="Year" class="control-label">Год рождения</label>
+        <label asp-for="Year" class="control-label">Year of birth</label>
         <input type="number" asp-for="Year" class="form-control" />
     </div>
     <div class="form-group">
-        <input type="submit" value="Добавить" class="btn btn-outline-secondary" />
+        <input type="submit" value="Add" class="btn btn-outline-secondary" />
     </div>
 </form>

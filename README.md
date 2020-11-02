@@ -16,5 +16,8 @@
   - Manage user roles
   - Add new users
   
+## To Do
+- Inject automapper properly
+  
 ## Notes
 - Packges in order to code first: EF Core, Tools, Design, EF Postgres
