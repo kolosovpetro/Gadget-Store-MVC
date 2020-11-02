@@ -23,6 +23,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\GadgetStoreMVC.Auxiliaries\GadgetStoreMVC.Auxiliaries.csproj" />
       <ProjectReference Include="..\GadgetStoreMVC.Models\GadgetStoreMVC.Models.csproj" />
     </ItemGroup>
 

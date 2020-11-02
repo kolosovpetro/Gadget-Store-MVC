@@ -1,3 +1,4 @@
+using GadgetStoreMVC.Data.Extensions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -18,6 +19,7 @@ namespace GadgetStoreMVC
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddDataLayerWithPostgreSql(Configuration);
         }
         
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
