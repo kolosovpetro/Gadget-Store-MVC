@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GadgetStoreMVC.Core", "GadgetStoreMVC.Core\GadgetStoreMVC.Core.csproj", "{6DCE1375-0CC1-40D5-B54C-674261E37B6A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GadgetStoreMVC.Models", "GadgetStoreMVC.Models\GadgetStoreMVC.Models.csproj", "{4DAE13B4-1780-4AE4-ACC8-06332CB99073}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GadgetStoreMVC.Data", "GadgetStoreMVC.Data\GadgetStoreMVC.Data.csproj", "{3C03A134-F3E2-485E-A2EA-D7FD6DA0FB16}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GadgetStoreMVC.Repository", "GadgetStoreMVC.Repository\GadgetStoreMVC.Repository.csproj", "{23212871-343F-4B83-AABE-52F254E8AFE9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GadgetStoreMVC.Services", "GadgetStoreMVC.Services\GadgetStoreMVC.Services.csproj", "{1E54F58D-447A-482A-9817-058FF7551E41}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GadgetStoreMVC.Tests", "GadgetStoreMVC.Tests\GadgetStoreMVC.Tests.csproj", "{6C2F4B08-7674-4E50-8223-8A36256E7132}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6DCE1375-0CC1-40D5-B54C-674261E37B6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6DCE1375-0CC1-40D5-B54C-674261E37B6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6DCE1375-0CC1-40D5-B54C-674261E37B6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6DCE1375-0CC1-40D5-B54C-674261E37B6A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4DAE13B4-1780-4AE4-ACC8-06332CB99073}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4DAE13B4-1780-4AE4-ACC8-06332CB99073}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4DAE13B4-1780-4AE4-ACC8-06332CB99073}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4DAE13B4-1780-4AE4-ACC8-06332CB99073}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C03A134-F3E2-485E-A2EA-D7FD6DA0FB16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C03A134-F3E2-485E-A2EA-D7FD6DA0FB16}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C03A134-F3E2-485E-A2EA-D7FD6DA0FB16}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C03A134-F3E2-485E-A2EA-D7FD6DA0FB16}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23212871-343F-4B83-AABE-52F254E8AFE9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23212871-343F-4B83-AABE-52F254E8AFE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23212871-343F-4B83-AABE-52F254E8AFE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23212871-343F-4B83-AABE-52F254E8AFE9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E54F58D-447A-482A-9817-058FF7551E41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E54F58D-447A-482A-9817-058FF7551E41}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E54F58D-447A-482A-9817-058FF7551E41}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E54F58D-447A-482A-9817-058FF7551E41}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C2F4B08-7674-4E50-8223-8A36256E7132}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C2F4B08-7674-4E50-8223-8A36256E7132}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C2F4B08-7674-4E50-8223-8A36256E7132}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C2F4B08-7674-4E50-8223-8A36256E7132}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
