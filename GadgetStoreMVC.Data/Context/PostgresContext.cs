@@ -19,15 +19,16 @@ namespace GadgetStoreMVC.Data.Context
         public virtual DbSet<GadgetModel> Gadgets { get; set; }
         public virtual DbSet<OrderModel> Orders { get; set; }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            if (!optionsBuilder.IsConfigured)
-            {
-                optionsBuilder.UseNpgsql(
-                    "Server=localhost;User Id=postgres;Password=postgres;Database=GadgetStoreDatabase;"
-                );
-            }
-        }
+        // protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        // {
+        //     if (!optionsBuilder.IsConfigured)
+        //     {
+        //         optionsBuilder.UseNpgsql(
+        //             //"Server=localhost;User Id=postgres;Password=postgres;Database=GadgetStoreDatabase;"
+        //
+        //         );
+        //     }
+        // }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
