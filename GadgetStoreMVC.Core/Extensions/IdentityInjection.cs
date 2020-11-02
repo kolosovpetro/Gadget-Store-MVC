@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace GadgetStoreMVC.Data.Extensions
+namespace GadgetStoreMVC.Extensions
 {
     public static class IdentityInjection
     {
