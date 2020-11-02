@@ -2,6 +2,10 @@
 
 ## Description
 
+ASP NET MVC Core application for simple gadget store which implies CRUD operations.
+
+![StorePicture](GadgetStore.jpg?raw=true)
+
 ## Functionality
 
 - User
