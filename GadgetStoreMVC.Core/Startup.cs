@@ -1,4 +1,7 @@
 using GadgetStoreMVC.Data.Extensions;
+using GadgetStoreMVC.Extensions;
+using GadgetStoreMVC.Repository.Extensions;
+using GadgetStoreMVC.Services.Extensions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -14,12 +17,16 @@ namespace GadgetStoreMVC
             Configuration = configuration;
         }
 
-        public IConfiguration Configuration { get; }
+        private IConfiguration Configuration { get; }
         
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
             services.AddDataLayerWithPostgreSql(Configuration);
+            services.AddIdentityRole(Configuration);
+            services.AddRepositories(Configuration);
+            services.AddServices(Configuration);
+            services.ConfigureSession(Configuration);
         }
         
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -38,8 +45,10 @@ namespace GadgetStoreMVC
             app.UseStaticFiles();
 
             app.UseRouting();
+            app.UseSession();
 
             app.UseAuthorization();
+            app.UseAuthentication();
 
             app.UseEndpoints(endpoints =>
             {
