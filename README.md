@@ -5,9 +5,16 @@
 ## Functionality
 
 - User
-  - Do one
+  - Register
+  - Login
+  - Logout
+  - Order gadget
+  - Edit order
+  - Cancel order
 
 - Administrator
-  - Do other
+  - Manage user roles
+  - Add new users
   
 ## Notes
+- Packges in order to code first: EF Core, Tools, Design, EF Postgres
