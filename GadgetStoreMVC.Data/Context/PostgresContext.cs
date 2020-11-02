@@ -4,21 +4,34 @@ using Microsoft.EntityFrameworkCore;
 
 namespace GadgetStoreMVC.Data.Context
 {
-    public class GadgetStoreContext : DbContext
+    public class PostgresContext : DbContext
     {
-        public GadgetStoreContext(DbContextOptions<GadgetStoreContext> options)
+        public PostgresContext()
+        {
+        }
+
+        public PostgresContext(DbContextOptions<PostgresContext> options)
             : base(options)
         {
         }
 
         public virtual DbSet<GadgetModel> Gadgets { get; set; }
         public virtual DbSet<OrderModel> Orders { get; set; }
-        
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            if (!optionsBuilder.IsConfigured)
+            {
+                optionsBuilder.UseNpgsql(
+                    "Server=localhost;User Id=postgres;Password=postgres;Database=GadgetStoreDatabase;"
+                );
+            }
+        }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new GadgetConfiguration());
             modelBuilder.ApplyConfiguration(new OrderConfiguration());
         }
-
     }
 }
