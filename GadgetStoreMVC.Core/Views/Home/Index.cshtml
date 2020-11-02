@@ -2,7 +2,43 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+
+@if (User.Identity.IsAuthenticated && User.IsInRole("User") && !User.IsInRole("Admin"))
+{
+    <p>@User.Identity.Name</p>
+    <ul>
+        <li>@Html.ActionLink("Каталог товаров", "GadgetList", "Store");</li>
+        <li>@Html.ActionLink("Корзина", "UserCart", "Store");</li>
+        @{
+            if (User.IsInRole("Admin"))
+            {
+                <li>This user is admin</li>
+            }
+        }
+    </ul>
+
+    <form method="post" asp-controller="Account" asp-action="Logout">
+        <input type="submit" value="Выход" />
+    </form>
+
+}
+@if (User.Identity.IsAuthenticated && User.IsInRole("Admin") && User.IsInRole("User"))
+{
+    <p>@User.Identity.Name</p>
+    <ul>
+        <li>@Html.ActionLink("Каталог товаров", "GadgetList", "Store");</li>
+        <li>@Html.ActionLink("Корзина", "UserCart", "Store");</li>
+        <li>@Html.ActionLink("Пользователи", "Index", "Users");</li>
+        <li>@Html.ActionLink("Управление ролями", "Index", "Roles");</li>
+    </ul>
+
+    <form method="post" asp-controller="Account" asp-action="Logout">
+        <input type="submit" value="Выход" />
+    </form>
+
+}
+else
+{
+    <a asp-controller="Account" asp-action="Login">Вход</a>
+    <a asp-controller="Account" asp-action="Register">Регистрация</a>
+}

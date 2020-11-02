@@ -5,4 +5,9 @@
         <RootNamespace>GadgetStoreMVC</RootNamespace>
     </PropertyGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\GadgetStoreMVC.Models\GadgetStoreMVC.Models.csproj" />
+      <ProjectReference Include="..\GadgetStoreMVC.Services\GadgetStoreMVC.Services.csproj" />
+    </ItemGroup>
+
 </Project>
