@@ -15,10 +15,18 @@ namespace GadgetStoreMVC.Controllers
         {
             _userManager = userManager;
         }
-
-        public IActionResult Index() => View(_userManager.Users.ToList());
-
-        public IActionResult Create() => View();
+        
+        [HttpGet]
+        public IActionResult Index()
+        {
+            return View(_userManager.Users.ToList());
+        }
+        
+        [HttpGet]
+        public IActionResult Create()
+        {
+            return View();
+        }
 
         [HttpPost]
         public async Task<IActionResult> Create(CreateUserViewModel model)
@@ -38,7 +46,8 @@ namespace GadgetStoreMVC.Controllers
             }
             return View(model);
         }
-
+        
+        [HttpGet]
         public async Task<IActionResult> Edit(string id)
         {
             var user = await _userManager.FindByIdAsync(id);
@@ -89,7 +98,7 @@ namespace GadgetStoreMVC.Controllers
         }
 
         // password change related methods
-
+        [HttpGet]
         public async Task<IActionResult> ChangePassword(string id)
         {
             var user = await _userManager.FindByIdAsync(id);

@@ -5,7 +5,6 @@ using AutoMapper;
 using GadgetStoreMVC.Models.Models;
 using GadgetStoreMVC.Models.ViewModel;
 using GadgetStoreMVC.Services.Services;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -33,7 +32,6 @@ namespace GadgetStoreMVC.Controllers
         }
 
         [HttpGet]
-        [Authorize]
         public IActionResult Order(int gadgetId)
         {
             var gadget = _gadgetServices.GetGadget(gadgetId);
@@ -43,7 +41,6 @@ namespace GadgetStoreMVC.Controllers
         }
 
         [HttpPost]
-        [Authorize]
         public IActionResult Order(IFormCollection collection)
         {
             var id = HttpContext.Session.GetInt32("GadgetId");
@@ -65,7 +62,6 @@ namespace GadgetStoreMVC.Controllers
         }
 
         [HttpGet]
-        [Authorize]
         public IActionResult UserCart()
         {
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
@@ -74,7 +70,6 @@ namespace GadgetStoreMVC.Controllers
         }
         
         [HttpGet]
-        [Authorize]
         public IActionResult Details(int gadgetId)
         {
             var gadget = _gadgetServices.GetGadget(gadgetId);
@@ -83,7 +78,6 @@ namespace GadgetStoreMVC.Controllers
         }
 
         [HttpGet]
-        [Authorize]
         public IActionResult EditCartItem(int orderId)
         {
             var order = _orderServices.GetById(orderId);
@@ -93,7 +87,6 @@ namespace GadgetStoreMVC.Controllers
         }
 
         [HttpPost]
-        [Authorize]
         public IActionResult EditCartItem(IFormCollection collection)
         {
             var nullableOrderId = HttpContext.Session.GetInt32("orderId");
@@ -109,7 +102,6 @@ namespace GadgetStoreMVC.Controllers
         }
 
         [HttpGet]
-        [Authorize]
         public IActionResult DeleteCartItem(int orderId)
         {
             var order = _orderServices.GetById(orderId);
@@ -119,7 +111,6 @@ namespace GadgetStoreMVC.Controllers
         }
 
         [HttpPost]
-        [Authorize]
         public IActionResult DeleteCartItem()
         {
             var nullableId = HttpContext.Session.GetInt32("DeleteOrderId");
