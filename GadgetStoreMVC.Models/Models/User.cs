@@ -2,7 +2,7 @@
 
 namespace GadgetStoreMVC.Models.Models
 {
-    public class User: IdentityUser
+    public class User : IdentityUser
     {
         public int Year { get; set; }
     }

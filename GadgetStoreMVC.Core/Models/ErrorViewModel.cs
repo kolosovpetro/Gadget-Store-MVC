@@ -1,5 +1,3 @@
-using System;
-
 namespace GadgetStoreMVC.Models
 {
     public class ErrorViewModel

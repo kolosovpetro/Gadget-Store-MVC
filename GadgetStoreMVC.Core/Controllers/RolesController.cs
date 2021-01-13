@@ -3,6 +3,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using GadgetStoreMVC.Models.Models;
 using GadgetStoreMVC.Models.ViewModel;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
@@ -19,11 +20,22 @@ namespace GadgetStoreMVC.Controllers
             _userManager = userManager;
         }
 
-        public IActionResult Index() => View(_roleManager.Roles.ToList());
+        [HttpGet]
+        [Authorize]
+        public IActionResult Index()
+        {
+            return View(_roleManager.Roles.ToList());
+        }
 
-        public IActionResult Create() => View();
+        [HttpGet]
+        [Authorize]
+        public IActionResult Create()
+        {
+            return View();
+        }
 
         [HttpPost]
+        [Authorize]
         public async Task<IActionResult> Create(string name)
         {
             if (!string.IsNullOrEmpty(name))
@@ -45,6 +57,7 @@ namespace GadgetStoreMVC.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         public async Task<IActionResult> Delete(string id)
         {
             var role = await _roleManager.FindByIdAsync(id);
@@ -52,9 +65,16 @@ namespace GadgetStoreMVC.Controllers
                 await _roleManager.DeleteAsync(role);
             return RedirectToAction("Index");
         }
-
-        public IActionResult UserList() => View(_userManager.Users.ToList());
-
+        
+        [HttpGet]
+        [Authorize]
+        public IActionResult UserList()
+        {
+            return View(_userManager.Users.ToList());
+        }
+        
+        [HttpGet]
+        [Authorize]
         public async Task<IActionResult> Edit(string userId)
         {
             // get user
@@ -80,6 +100,7 @@ namespace GadgetStoreMVC.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         public async Task<IActionResult> Edit(string userId, List<string> roles)
         {
             // get user

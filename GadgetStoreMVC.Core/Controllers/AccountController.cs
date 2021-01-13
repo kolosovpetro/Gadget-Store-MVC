@@ -1,6 +1,7 @@
 ﻿using System.Threading.Tasks;
 using GadgetStoreMVC.Models.Models;
 using GadgetStoreMVC.Models.ViewModel;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
@@ -82,6 +83,7 @@ namespace GadgetStoreMVC.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public async Task<IActionResult> Logout()
         {
             // delete authorization cookie

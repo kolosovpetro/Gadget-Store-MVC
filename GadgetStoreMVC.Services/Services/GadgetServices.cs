@@ -1,7 +1,5 @@
 ﻿using System.Collections.Generic;
-using AutoMapper;
 using GadgetStoreMVC.Models.Models;
-using GadgetStoreMVC.Models.ViewModel;
 using GadgetStoreMVC.Repository.ConcreteRepositories;
 
 namespace GadgetStoreMVC.Services.Services

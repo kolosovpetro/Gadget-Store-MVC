@@ -1,6 +1,6 @@
 ﻿@model GadgetStoreMVC.Models.ViewModel.LoginViewModel
 
-<h2>Вход в приложение</h2>
+<h2>Login to Application</h2>
 <form method="post" asp-controller="Account" asp-action="Login"
       asp-route-returnUrl="@Model.ReturnUrl">
     <div asp-validation-summary="ModelOnly"></div>
@@ -19,6 +19,9 @@
         <input asp-for="RememberMe" />
     </div>
     <div>
-        <input type="submit" value="Войти" />
+        <input type="submit" value="Login" />
     </div>
 </form>
+<div>
+    Do not have accout? @Html.ActionLink("Register", "Register", "Account")
+</div>
